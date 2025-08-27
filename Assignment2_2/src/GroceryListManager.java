@@ -4,7 +4,7 @@ public class GroceryListManager {
     private ArrayList<String> groceryList = new ArrayList<>();
 
     // Add item to the list
-    public void addItem(String item, double v) {
+    public void addItem(String item) {
         groceryList.add(item);
     }
 
@@ -22,7 +22,7 @@ public class GroceryListManager {
         System.out.println();
     }
 
-    // Check if an item present in the list
+    // Check if an item exists in the list
     public boolean checkItem(String item) {
         return groceryList.contains(item);
     }
@@ -31,11 +31,11 @@ public class GroceryListManager {
         GroceryListManager manager = new GroceryListManager();
 
         // Add some items
-        manager.addItem("Apples", 2.50);
-        manager.addItem("Milk", 2.50);
-        manager.addItem("Bread", 2.50);
-        manager.addItem("Cheese", 2.50);
-        manager.addItem("Chicken", 2.50);
+        manager.addItem("Apples");
+        manager.addItem("Milk");
+        manager.addItem("Bread");
+        manager.addItem("Cheese");
+        manager.addItem("Chicken");
 
         // Display the list
         manager.displayList();
@@ -53,9 +53,5 @@ public class GroceryListManager {
         System.out.println("Updated Grocery List:");
         manager.displayList();
     }
-
-
-
 }
-
 
