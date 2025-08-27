@@ -1,73 +1,56 @@
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class GroceryListManager {
-    private HashMap<String, Double> groceryList = new HashMap<>();
+    private ArrayList<String> groceryList = new ArrayList<>();
 
-    // Add item with cost
-    public void addItem(String item, double cost) {
-        groceryList.put(item, cost);
+    // Add item to the list
+    public void addItem(String item) {
+        groceryList.add(item);
     }
 
-
+    // Remove item from the list
     public void removeItem(String item) {
         groceryList.remove(item);
     }
 
-    // Display all items with their costs
+    // Display all items in the list
     public void displayList() {
         System.out.println("Grocery List:");
-        int i = 1;
-        for (String item : groceryList.keySet()) {
-            System.out.println(i + ". " + item + " - $" + groceryList.get(item));
-            i++;
+        for (int i = 0; i < groceryList.size(); i++) {
+            System.out.println((i + 1) + ". " + groceryList.get(i));
         }
         System.out.println();
     }
 
-
+    // Check if an item exists in the list
     public boolean checkItem(String item) {
-        return groceryList.containsKey(item);
-    }
-
-    // Calculate total cost of all items
-    public double calculateTotalCost() {
-        double total = 0.0;
-        for (double cost : groceryList.values()) {
-            total += cost;
-        }
-        return total;
+        return groceryList.contains(item);
     }
 
     public static void main(String[] args) {
         GroceryListManager manager = new GroceryListManager();
 
-        // Add items with costs
-        manager.addItem("Apples", 1.00);
-        manager.addItem("Milk", 2.00);
-        manager.addItem("Bread", 3.00);
-        manager.addItem("Cheese", 5.00);
-        manager.addItem("Chicken", 8.00);
+        // Add some items
+        manager.addItem("Apples");
+        manager.addItem("Milk");
+        manager.addItem("Bread");
+        manager.addItem("Cheese");
+        manager.addItem("Chicken");
 
-        // Display list
+        // Display the list
         manager.displayList();
 
-
-        System.out.println("Is \"Cheese\" in the grocery list? " + manager.checkItem("cheese"));
+        // Check if "Cheese" is in the list
+        System.out.println("Is \"Cheese\" in the grocery list? " + manager.checkItem("Cheese"));
         System.out.println();
 
-        // Calculate total cost
-        System.out.println("Total cost of items: Euro" + manager.calculateTotalCost());
-        System.out.println();
-
-
-        System.out.println("Removing \"Cheese\"...");
+        // Remove "Cheese" from the list
+        System.out.println("Removing \"Cheese\" from the list...");
         manager.removeItem("Cheese");
+        System.out.println();
 
-
+        // Display updated list
         System.out.println("Updated Grocery List:");
         manager.displayList();
-
-        // Show updated total
-        System.out.println("Updated total cost: Euro" + manager.calculateTotalCost());
     }
 }
