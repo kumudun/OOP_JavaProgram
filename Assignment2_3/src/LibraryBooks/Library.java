@@ -37,6 +37,15 @@ public class Library {
     public void returnBook(Book book) {
         books.add(book);
     }
+    public boolean isBookAvailable(String title) {
+        for (Book book : books) {
+            if (book.getTitle().equals(title)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 
 }
