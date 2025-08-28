@@ -26,6 +26,19 @@ public class Library {
             }
         }
     }
+    public void borrowBook(String title) {
+        for (Book book : books) {
+            if (book.getTitle().equals(title)) {
+                books.remove(book);
+                break;
+            }
+        }
+    }
+    public void returnBook(Book book) {
+        books.add(book);
+    }
+
+
 }
 
 
