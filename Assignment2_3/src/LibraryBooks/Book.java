@@ -16,8 +16,8 @@ public class Book {
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
-        this.rating = rating;
-        this.reviews = reviews;
+        this.rating = 0.0;
+        this.reviews =  new ArrayList<>();;
     }
 
 
