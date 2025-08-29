@@ -9,7 +9,7 @@ public class Book {
     private String author;
     private int publicationYear;
     private double rating;
-    private ArrayList<String> reviews = new ArrayList<>();
+    private ArrayList<String> reviews;
 
     // Constructor
     public Book(String title, String author, int publicationYear) {
